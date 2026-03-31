@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Chord Prediction</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    .container { max-width: 600px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+    h1 { text-align: center; }
+    .mic-select { margin-bottom: 24px; }
+    .prediction { font-size: 2em; text-align: center; margin: 32px 0; }
+    .api-list { margin: 24px 0; }
+    .api-list ul { padding-left: 20px; }
+    .live-btn { display: block; margin: 0 auto; padding: 12px 32px; font-size: 1.1em; border: none; border-radius: 4px; background: #0078d7; color: #fff; cursor: pointer; }
+    .live-btn:disabled { background: #aaa; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Live Chord Prediction</h1>
+    <div class="mic-select">
+      <label for="mic">Select Microphone:</label>
+      <select id="mic"></select>
+    </div>
+    <button class="live-btn" id="startBtn">Start Live Prediction</button>
+    <div class="prediction" id="prediction">Prediction: <span>-</span></div>
+    <div class="api-list">
+      <h3>Available Backend API Endpoints</h3>
+      <ul id="apiEndpoints"></ul>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

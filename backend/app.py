@@ -12,6 +12,7 @@ import librosa
 import numpy as np
 import soundfile as sf
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
 
@@ -154,7 +155,17 @@ class ModelService:
 
 
 service = ModelService(DEFAULT_MODEL_DIR)
+
 app = FastAPI(title="Chord Inference Backend", version="1.0.0")
+
+# Přidání CORS middleware pro povolení požadavků z webového frontendu
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # nebo např. ["http://localhost:3000"] pro větší bezpečnost
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
