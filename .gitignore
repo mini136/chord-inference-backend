@@ -1,0 +1,31 @@
+# .gitignore for Chord Inference Backend
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Model artifacts
+../model/
+../model/*
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Ignore test and temp files
+*.tmp
+*.bak

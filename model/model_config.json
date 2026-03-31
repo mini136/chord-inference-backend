@@ -1,0 +1,24 @@
+{
+  "classes": [
+    "A",
+    "A7",
+    "Am",
+    "C",
+    "D",
+    "Dm",
+    "E",
+    "E7",
+    "Em",
+    "G"
+  ],
+  "window_ms": 200,
+  "hop_ms": 100,
+  "start_offset_ms": 300,
+  "feature_dim": 29,
+  "num_windows": 11214,
+  "num_windows_train": 8424,
+  "num_windows_test": 2790,
+  "source": "C:\\Users\\blova\\Documents\\jecna\\pv\\4rocnik\\StrojoveUceniProjekt\\dataset",
+  "num_sessions": 16,
+  "num_files": 159
+}
