@@ -1,27 +1,40 @@
 @echo off
-REM Aktivace virtuálního prostředí
+chcp 65001 >nul
+cd /d "%~dp0"
+
+echo ===== Chord Inference – setup a spuštění =====
+
+REM ---- Python venv ----
+if not exist .venv (
+    echo Vytvářím virtuální prostředí...
+    python -m venv .venv
+)
 call .venv\Scripts\activate
 
-REM Instalace závislostí backendu
-pip install -r backend\requirements-backend.txt
+REM ---- Backend závislosti ----
+echo Instaluji Python závislosti...
+pip install -q -r backend\requirements-backend.txt
 
-REM Instalace závislostí frontend (pokud je potřeba)
+REM ---- Frontend závislosti (serve stačí) ----
 cd frontend
-if exist node_modules (
-    echo Node modules already installed.
-) else (
-    npm install
+if not exist node_modules\serve (
+    echo Instaluji serve pro frontend...
+    npm install --legacy-peer-deps
 )
 cd ..
 
-REM Spuštění backendu
-start "backend" cmd /k "python -m uvicorn backend.app:app --host localhost --port 40150"
+REM ---- Spuštění backendu ----
+echo Spouštím backend na http://localhost:40150 ...
+start "backend" cmd /k "call .venv\Scripts\activate && python -m uvicorn backend.app:app --host localhost --port 40150"
 
-
-REM Build a spuštění frontendu
+REM ---- Spuštění frontendu ----
+echo Spouštím frontend na http://localhost:3000 ...
 cd frontend
-echo Spouštění frontendu...
 start "frontend" cmd /k "npx serve public -l 3000"
 cd ..
 
-echo Backend běží na http://localhost:40150
+echo.
+echo ===== Vše běží =====
+echo Backend:  http://localhost:40150
+echo Frontend: http://localhost:3000
+echo.
