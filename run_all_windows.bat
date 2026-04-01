@@ -20,9 +20,8 @@ start "backend" cmd /k "python -m uvicorn backend.app:app --host localhost --por
 
 REM Build a spuštění frontendu
 cd frontend
-echo Budování produkčního buildu React aplikace...
-npm run build
-start "frontend" cmd /k "npx serve build -l 3000"
+echo Spouštění frontendu...
+start "frontend" cmd /k "npx serve public -l 3000"
 cd ..
 
 echo Backend běží na http://localhost:40150

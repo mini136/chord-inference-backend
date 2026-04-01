@@ -1,0 +1,143 @@
+body {
+  background: #f6f8fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 28px 24px 28px;
+}
+
+h1 {
+  text-align: center;
+  color: #2d3a4b;
+  margin-bottom: 12px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.status-bar {
+  text-align: center;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.status-connected {
+  background: #d1fae5;
+  color: #065f46;
+}
+.status-disconnected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  font-weight: 500;
+  color: #3a4a5d;
+  margin-right: 8px;
+}
+
+select {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #cfd8dc;
+  font-size: 1rem;
+  max-width: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 12px 0;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 22px;
+  transition: background 0.2s;
+}
+button:hover:not(:disabled) {
+  background: #174ea6;
+}
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.prediction-box {
+  background: #e3eafc;
+  border-radius: 8px;
+  padding: 18px 14px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.prediction-main {
+  margin-bottom: 10px;
+}
+#prediction-label {
+  color: #3a4a5d;
+  font-weight: 500;
+  margin-right: 8px;
+}
+#prediction {
+  font-size: 2rem;
+  color: #174ea6;
+  font-weight: bold;
+}
+.prediction-details {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.detail-label {
+  color: #64748b;
+}
+#stableChord, #confidence {
+  font-weight: 600;
+  color: #2d3a4b;
+}
+.top-candidates {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.candidate-tag {
+  background: #c7d2fe;
+  color: #3730a3;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.api-section {
+  margin-top: 18px;
+}
+.api-section h2 {
+  font-size: 1.1rem;
+  color: #2d3a4b;
+  margin-bottom: 8px;
+}
+.api-section ul {
+  padding-left: 18px;
+  color: #4b5563;
+  font-size: 0.98rem;
+}
